@@ -1,3 +1,17 @@
 # The Front-End Toolbox
 This web application is a collection of tools developed to make tedious front end tasks easier and quicker.
-There are several tools including Shadow Generators, Transform Generators, Minifiers and Prefixers.
+
+## Tech Stack
+his web application was mostly made with vanilla React.  Although it used React-Router-Dom from routing as well as Redux for the handling of the checklist functionality.
+
+## Tools So far
+#### Styling Tools:
+* BoxShadow Generator
+* TextShadow Generator
+* Transform Generator
+* Image Filter Generator
+#### Code Tools
+* Browser Prefixer
+* CSS Minifier
+#### Development Tools
+* Site Launch Checklist _Not Done Yet_
