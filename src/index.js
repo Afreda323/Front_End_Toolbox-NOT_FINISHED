@@ -25,14 +25,16 @@ ReactDOM.render(
         <Route path="/codetools" component={CodeTools}/>
         <Route path="/devtools" component={DevTools}/>
         <footer>
-          <a href='http://antfreda.com'>
+          <a target='_blank' href='http://antfreda.com'>
             <div className='left'>
                 <img src={ant} alt='AntFreda logo' />
             </div>
+           </a>
+           <a target='_blank' href='https://github.com/Afreda323/Front_End_Toolbox-NOT_FINISHED'>
+            <div className='right'>
+              <img src={gh} alt='Github logo' />
+            </div>
           </a>
-          <div className='right'>
-            <img src={gh} alt='Github logo' />
-          </div>
         </footer>
       </div>
     </BrowserRouter>
