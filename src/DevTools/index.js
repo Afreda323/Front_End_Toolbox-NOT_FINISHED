@@ -4,6 +4,7 @@ import DevToolsHome from './DevToolsHome'
 import CheckList from './CheckList'
 
 export default class DevTools extends React.Component {
+  //SCROLL TO TOP ON LOAD
   componentDidMount() {
     window.scrollTo(0, 0)
   }

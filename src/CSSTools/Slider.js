@@ -1,5 +1,6 @@
 import React from 'react';
 
+//  BASIC SLIDER FOR CHANGING CSS ON DOM ELEMENTS
 const Slider = (props) => {
   return (
     <div className="range-slider">

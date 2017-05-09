@@ -1,3 +1,4 @@
+// THE LIST OF ALL CATEGORIES AND THE TASKS WITHIN THEM
 const list = [
     {
         title: 'Content',

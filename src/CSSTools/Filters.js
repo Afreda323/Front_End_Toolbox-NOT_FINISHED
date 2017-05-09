@@ -20,50 +20,60 @@ export default class Filters extends React.Component {
 
     }
   }
+  //CHANGE PAGE TITLE
   componentDidMount() {
     document.title = 'CSS Filters'
   }
+  // THIS FUNCTION RETURNS THE blur STYLE or AN EMPTY STRING IF 0
   getBlur(){
     if (this.state.blur > 0) {
       return `blur(${this.state.blur / 10}px) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE brightness STYLE or AN EMPTY STRING IF 0
   getBright(){
     if (this.state.brightness > 10 || this.state.brightness < 10) {
       return `brightness(${this.state.brightness/10}) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE contrast STYLE or AN EMPTY STRING IF 0
   getCont(){
     if (this.state.contrast > 100 || this.state.contrast < 100) {
       return `contrast(${this.state.contrast}%) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE grayscale STYLE or AN EMPTY STRING IF 0
   getGS(){
     if (this.state.grayScale > 0) {
       return `grayscale(${this.state.grayScale}%) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE invert STYLE or AN EMPTY STRING IF 0
   getIV(){
     if (this.state.invert > 0) {
       return `invert(${this.state.invert}%) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE sepia STYLE or AN EMPTY STRING IF 0
   getSep(){
     if (this.state.sepia > 0) {
       return `sepia(${this.state.sepia}%) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE saturate STYLE or AN EMPTY STRING IF 0
   getSat(){
     if (this.state.saturate > 100 || this.state.saturate < 100) {
       return `saturate(${this.state.saturate}%) `;
     }else { return ''; }
   }
+  // THIS FUNCTION RETURNS THE hueRotate STYLE or AN EMPTY STRING IF 0
   getHR(){
     if (this.state.hueRotate > 0) {
       return `hue-rotate(${this.state.hueRotate}deg) `;
     }else { return ''; }
   }
-
+  //  THIS FUNCTION RETURNS THE STYLE FOR THE
+  //  IMAGE BEING DISPLAYED ON THE DOM
   renderStyle(){
     let blur = this.getBlur();
     let bright = this.getBright();
@@ -81,6 +91,8 @@ export default class Filters extends React.Component {
       filter: `${blur}${bright}${contrast}${grayscale}${hueRotate}${invert}${sat}${sep}`
     }
   }
+  //  THIS FUNCTIO RETURNS THE CSS
+  //  THAT WILL BE COPIED BY THE USER
   renderCode(){
     let blur = this.getBlur();
     let bright = this.getBright();

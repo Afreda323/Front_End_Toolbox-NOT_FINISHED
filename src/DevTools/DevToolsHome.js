@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 export default class DevToolsHome extends React.Component {
+  //  CHANGE PAGE TITLE
     componentDidMount() {
         document.title = 'Development Tools'
     }

@@ -14,6 +14,17 @@ export default class Nav extends React.Component {
       devAria: false
     }
   }
+  //======================================================================
+
+  // THIS NAV HAS VARIOUS FUNCTIONS FOR OPENING AND CLOSING SUB MENUS
+  //  AS WELL AS FOR TOGGLING THE MOBILE navigation
+  //  EVERY LINK HAS A CONDITIONAL ACTIVE CLASS
+
+  // ---------------------------------------------
+
+  //  THERE IS ALSO A NAV RESET FOR WHEN ANY CHANGED ARE MADE ON THE PAGE
+  
+  //======================================================================
   resetNav() {
     this.setState({
       navExpandedClass: '',

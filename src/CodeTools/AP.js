@@ -15,9 +15,11 @@ export default class AP extends React.Component {
       errMessage: ' '
     }
   }
+  //SET PAGE TITLE
   componentDidMount() {
     document.title = 'AutoPrefixer'
   }
+  //HANDLE ERROR CLASS ON TEXTAREA
   getErr(){
     if (this.state.err) {
       return 'err'
@@ -25,23 +27,30 @@ export default class AP extends React.Component {
       return ''
     }
   }
+  //AUTOPREFIX USER INPUT CSS
   prefix(){
+    //CLEAR ERRORS
     this.setState({err: false, errMessage: ' '})
+    //CHECK IF BLANK
     if (this.state.userInput !== '') {
       let self = this;
+      //RUN THE CSS THROUGH THE PREFIXER, RETURNS A PROMISE
       postcss([ autoprefixer ]).process(this.state.userInput).then(function (result) {
           result.warnings().forEach(function (warn) {
               console.warn(warn.toString());
           });
+          //OUTPUT AP CSS
           self.setState({prefixed: result.css})
       }).catch((err) => {
+        //ERROR HANDLING
         self.setState({err: true, errMessage: 'Not Valid CSS'})
       });
     }else {
+      //IF NO USER INPUT
       this.setState({err: true, errMessage: 'Enter some CSS'})
     }
-
   }
+  //RENDER COPY CSS BUTTON ONCE THERES OUTPUT
   renderButton(){
     if (this.state.prefixed !== '') {
       return (

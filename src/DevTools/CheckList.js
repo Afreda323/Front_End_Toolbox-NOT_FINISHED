@@ -4,20 +4,20 @@ import * as actions from '../actions'
 import list from './checklistlist'
 
 class CheckList extends React.Component {
+  //  CHANGE PAGE TITLE
   componentDidMount() {
     document.title = 'Launch Checklist'
   }
-
+  //  RETURNS THE AMOUNT OF COMPLETED TASKS
   getCompleted(){
     return this.props.list.filter((bool) => bool === true).length;
   }
-
+  //  ON CHECK, ACTION IS CALLED WITH THE INDEX OF THE BOX
   handleCheck(e){
     this.props.checked(e.target.value - 1);
   }
-
+  //  GENERATE THE PERCENT OF COMPLETED TASKS / THE TOTAL AMOUNT OF TASKS
   renderPercent(completed, total){
-    console.log();
     if (completed !== 0) {
       return (((completed / total) * 100).toFixed(0));
     }else {
@@ -26,9 +26,17 @@ class CheckList extends React.Component {
   }
 
   render() {
+    //  WE HAVE TO MAKE OUR OWN INDEX,
+    //  DUE TO HOW ARRAYS ARE NESTED WITHIN DIFF OBJECTS
     let index = 0;
+
+    //  MAP THROUGH THE VARIOUS CATEGORIES
+    //  AND RETURN AN UNORDERED LIST WITH THE THE TITLES
     const mapped = list.map((item) => {
+      //  GO INTO THE TASKS FOR EACH CATEGORY AND MAP THEM
+      //  AND RETURN A LIST OF CHECKBOXED FOR EACH TASK
       const tasks = item.tasks.map((task) => {
+        //  ADD TO INDEX FOR EVERY MAPPED TASK
         index++;
         return(
           <div key={index} className="form-check cl-task lead">
@@ -40,6 +48,7 @@ class CheckList extends React.Component {
           </div>
         )
       })
+      //THIS IS RETURNED FROM CATEGORY MAP
       return (
         <li key={item.key}>
           <h2 className='cl-category'>{item.title}</h2>
@@ -57,6 +66,10 @@ class CheckList extends React.Component {
     );
   }
 }
+
+//================================
+//      --    CONNECT    --
+//================================
 function mapStateToProps(state){
   return {
     list: state.checklist

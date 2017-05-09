@@ -19,9 +19,11 @@ export default class TextShadow extends React.Component {
       copyText: 'Copy Code'
     }
   }
+  // CHANGE PAGE TITLE
   componentDidMount() {
     document.title = 'CSS Text-Shadow'
   }
+  // RETURNS STYLE THATS APPLIED TO TEXT ON SCREEN
   renderStyle(){
     return {
       marginBottom: 0,
@@ -31,10 +33,10 @@ export default class TextShadow extends React.Component {
                   ${this.state.blur}px
                   rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a}) `};
   }
+  //RETURNS CSS FOR USER TO COPY
   renderCode(){
     return `text-shadow: ${this.state.hor}px ${this.state.ver}px ${this.state.blur}px rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a});`;
   }
-  //box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   render() {
     return (
       <div className='box-shadow container'>

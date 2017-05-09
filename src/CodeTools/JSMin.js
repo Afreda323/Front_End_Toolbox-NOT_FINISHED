@@ -1,3 +1,7 @@
+//=======================================
+//  THIS IS NOT MAKING IT TO THE BUILD 
+//=======================================
+
 import React from 'react';
 import ClipboardButton from 'react-clipboard.js';
 export default class JSMin extends React.Component {

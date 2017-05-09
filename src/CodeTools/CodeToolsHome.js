@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 export default class CodeToolsHome extends React.Component {
+  //SET PAGE TITLE
   componentDidMount() {
     document.title = 'Code Tools'
   }

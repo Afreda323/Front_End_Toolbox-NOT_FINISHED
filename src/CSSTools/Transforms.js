@@ -15,11 +15,16 @@ export default class Transforms extends React.Component {
       skewX: 0,
       copyText: 'Copy Code'
     }
-
   }
+  //CHANGE PAGE TITLE
   componentDidMount() {
     document.title = 'CSS Transforms'
   }
+  //======================================================
+  //  BELOW IS A BUNCH OF FUNCITONS THAT RETURN EITHER
+  //  THE CSS STYLE FOR THE GIVEN Transform
+  //  OR ZERO IF THERE WAS NO CHANGES APPLIED
+  //======================================================
   getRotate(){
     if (String(this.state.rotateVal) !== '0') {
       return `rotate(${this.state.rotateVal}deg)`;
@@ -45,6 +50,11 @@ export default class Transforms extends React.Component {
       return `skewY(${this.state.skewY}deg)`;
     }else{ return `` }
   }
+  //========================================
+  //       END STYLE FUNCTIONS
+  //========================================
+
+  //  THIS RETURNS THE STYLE THATS APPLIED TO THE DIV ON THE DOM
   renderStyle(){
     let rotate = this.getRotate();
     let translateY = this.getTY();
@@ -60,6 +70,8 @@ export default class Transforms extends React.Component {
       transform: `${rotate} ${translateX} ${translateY} ${scale} ${skewX} ${skewY}`,
     }
   }
+  
+  //  THIS RETURNS THE CSS FRO THE USER TO COPY
   renderCode(){
     let rotate = this.getRotate();
     let translateY = this.getTY();

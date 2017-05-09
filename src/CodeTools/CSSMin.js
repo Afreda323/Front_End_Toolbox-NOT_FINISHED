@@ -1,5 +1,5 @@
 import React from 'react';
-import csso from 'csso'
+import csso from 'csso'; 
 import ClipboardButton from 'react-clipboard.js';
 
 export default class CSSMin extends React.Component {
@@ -13,9 +13,11 @@ export default class CSSMin extends React.Component {
       errMessage: ''
     }
   }
+  //SET PAGE TITLE
   componentDidMount() {
     document.title = 'CSS Minifier'
   }
+  //HANDLE ERROR CLASS ON TEXTAREA
   getErr(){
     if (this.state.err) {
       return 'err'
@@ -23,16 +25,18 @@ export default class CSSMin extends React.Component {
       return ''
     }
   }
+  //MINIFY CSS USING CSSO
   minify(){
     this.setState({err: false, errMessage: ''})
     if (this.state.userInput !== '') {
       const minifiedCss = csso.minify(this.state.userInput);
       this.setState({minified: minifiedCss.css})
-    }else {
+    }else { //HANDLE IF EMPTY
       console.log('lol');
       this.setState({err: true, errMessage: 'Enter some CSS'})
     }
   }
+  //RENDER THE BUTTON FOR COPYING thE MINI CSS
   renderButton(){
     if (this.state.minified !== '') {
       return (

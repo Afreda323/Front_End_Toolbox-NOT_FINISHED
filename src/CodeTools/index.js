@@ -6,6 +6,7 @@ import JSMin from './JSMin'
 import AP from './AP'
 
 export default class CodeTools extends React.Component {
+  //SCROLL TO TOP ON LOAD
   componentDidMount() {
     window.scrollTo(0, 0);
   }

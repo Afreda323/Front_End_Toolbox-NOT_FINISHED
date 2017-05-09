@@ -21,10 +21,13 @@ export default class BoxShadow extends React.Component {
       copyText: 'Copy Code'
     }
   }
+  // CHANGE PAGE TITLE
   componentDidMount() {
     document.title = 'CSS Box-Shadow'
   }
+  //  THIS FUNCTION RETURNS THE CSS FOR ALTERING THE BOX IN THE DOM
   renderStyle(){
+    //INSET HANDLING
     let inset = '';
     if (this.state.inset) {
       inset = "inset";
@@ -37,6 +40,7 @@ export default class BoxShadow extends React.Component {
                   ${this.state.spread}px
                   rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a}) `};
   }
+  //  THIS FUNCTION GENERATES THE CODE THAT WILL BE COPIED BY THE USER
   renderCode(){
     let inset = '';
     if (this.state.inset) {
@@ -44,7 +48,6 @@ export default class BoxShadow extends React.Component {
     }
     return `box-shadow: ${inset} ${this.state.hor}px ${this.state.ver}px ${this.state.blur}px ${this.state.spread}px rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a});`;
   }
-  //box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   render() {
     return (
       <div className='box-shadow container'>

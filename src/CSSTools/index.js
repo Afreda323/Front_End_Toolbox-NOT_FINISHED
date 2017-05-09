@@ -6,6 +6,7 @@ import Transforms from './Transforms'
 import Filters from './Filters'
 import CSSToolsHome from './CSSToolsHome'
 export default class CSSTools extends React.Component {
+  //  SCROLL TO TOP ON LOAD
   componentDidMount() {
     window.scrollTo(0, 0)
   }
