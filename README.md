@@ -15,3 +15,11 @@ his web application was mostly made with vanilla React.  Although it used React-
 * CSS Minifier
 #### Development Tools
 * Site Launch Checklist _Not Done Yet_
+## Run It
+Make sure you have [Node](https://nodejs.org/en/) installed.
+Fork or download the file.
+Then run
+```
+npm install
+npm start
+```
